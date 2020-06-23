@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PerfilFragment">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/session_perfil_usuario"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:padding="15dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:id="@+id/icon_perfil"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_perfil"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="20dp"
+                    app:layout_constraintLeft_toRightOf="@+id/icon_perfil"
+                    tools:ignore="MissingConstraints">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nome do Usuário"
+                        android:textColor="@color/dark"
+                        android:textSize="20dp"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:text="Endereço E-mail"
+                        android:textSize="18dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:layout_editor_absoluteX="0dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.internal.BaselineLayout
+                android:id="@+id/baseline_1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#C2C2C2"
+                app:layout_constraintBottom_toBottomOf="@+id/session_perfil_usuario"
+                tools:ignore="MissingConstraints" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="120dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/session_editar_perfil"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:padding="30dp"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/icon_edit_perfil"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_edit"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:text="Editar Perfil"
+                    android:textColor="@color/dark"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/icon_edit_perfil"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.506" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.internal.BaselineLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#C2C2C2"
+                app:layout_constraintBottom_toBottomOf="@+id/session_editar_perfil"
+                tools:ignore="MissingConstraints"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="220dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/session_notificacao"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:padding="30dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:id="@+id/icon_notificacao"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_notificacao"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:text="Notificações"
+                    android:textColor="@color/dark"
+                    android:textSize="20dp"
+                    app:layout_constraintLeft_toRightOf="@+id/icon_notificacao" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.internal.BaselineLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#C2C2C2"
+                app:layout_constraintBottom_toBottomOf="@+id/session_notificacao"
+                tools:ignore="MissingConstraints"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="320dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/session_cupons"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:padding="30dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:id="@+id/icon_cupons"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_cupons"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:text="Cupons"
+                    android:textColor="@color/dark"
+                    android:textSize="20dp"
+                    app:layout_constraintLeft_toRightOf="@+id/icon_cupons" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.internal.BaselineLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#C2C2C2"
+                app:layout_constraintBottom_toBottomOf="@+id/session_cupons"
+                tools:ignore="MissingConstraints"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="420dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/session_sair"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:padding="30dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:id="@+id/icon_sair"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_sair"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:text="Sair"
+                    android:textColor="@color/dark"
+                    android:textSize="20dp"
+                    app:layout_constraintLeft_toRightOf="@+id/icon_sair"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.internal.BaselineLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#C2C2C2"
+                app:layout_constraintBottom_toBottomOf="@+id/session_sair"
+                tools:ignore="MissingConstraints"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
