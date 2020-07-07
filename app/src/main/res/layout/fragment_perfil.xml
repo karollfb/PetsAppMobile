@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light"
     tools:context=".PerfilFragment">
 
     <FrameLayout
@@ -12,33 +13,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="20dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/session_perfil_usuario"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:padding="15dp"
-                tools:ignore="MissingConstraints">
+                android:layout_height="110dp"
+                android:layout_marginTop="20dp">
 
-                <ImageView
-                    android:id="@+id/icon_perfil"
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_perfil"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="4dp" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardBackgroundColor="@color/light"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="20dp"
-                    app:layout_constraintLeft_toRightOf="@+id/icon_perfil"
-                    tools:ignore="MissingConstraints">
+                    <ImageView
+                        android:id="@+id/icon_perfil"
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_girl_user"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="20dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -46,8 +44,8 @@
                         android:text="Nome do Usuário"
                         android:textColor="@color/dark"
                         android:textSize="20dp"
-                        tools:layout_editor_absoluteX="0dp"
-                        tools:layout_editor_absoluteY="4dp" />
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="100dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -55,188 +53,198 @@
                         android:layout_marginBottom="24dp"
                         android:text="Endereço E-mail"
                         android:textSize="18dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        tools:layout_editor_absoluteX="0dp" />
+                        android:layout_marginTop="46dp"
+                        android:layout_marginLeft="100dp"/>
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
 
-            <com.google.android.material.internal.BaselineLayout
-                android:id="@+id/baseline_1"
+            <LinearLayout
+                android:id="@+id/editar_perfil"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#C2C2C2"
-                app:layout_constraintBottom_toBottomOf="@+id/session_perfil_usuario"
-                tools:ignore="MissingConstraints" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="120dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/session_editar_perfil"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:padding="30dp"
-                tools:ignore="MissingConstraints"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingTop="15dp"
+                android:paddingLeft="30dp">
 
                 <ImageView
-                    android:id="@+id/icon_edit_perfil"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_edit"
-                    tools:ignore="MissingConstraints" />
+                    android:layout_width="36dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_edit" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="28dp"
                     android:text="Editar Perfil"
                     android:textColor="@color/dark"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/icon_edit_perfil"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.506" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <com.google.android.material.internal.BaselineLayout
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#C2C2C2"
-                app:layout_constraintBottom_toBottomOf="@+id/session_editar_perfil"
-                tools:ignore="MissingConstraints"/>
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="220dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/session_notificacao"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:padding="30dp"
-                tools:ignore="MissingConstraints">
+                    android:textSize="18sp" />
 
                 <ImageView
-                    android:id="@+id/icon_notificacao"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_notificacao"
-                    tools:ignore="MissingConstraints" />
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/ic_arrow_details"/>
+
+            </LinearLayout>
+
+            <com.google.android.material.internal.BaselineLayout
+                android:layout_width="320dp"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <LinearLayout
+                android:id="@+id/notificacoes"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="15dp"
+                android:paddingLeft="30dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_notificacao" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="28dp"
                     android:text="Notificações"
                     android:textColor="@color/dark"
-                    android:textSize="20dp"
-                    app:layout_constraintLeft_toRightOf="@+id/icon_notificacao" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <com.google.android.material.internal.BaselineLayout
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#C2C2C2"
-                app:layout_constraintBottom_toBottomOf="@+id/session_notificacao"
-                tools:ignore="MissingConstraints"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="320dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/session_cupons"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:padding="30dp"
-                tools:ignore="MissingConstraints">
+                    android:textSize="18sp" />
 
                 <ImageView
-                    android:id="@+id/icon_cupons"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_cupons"
-                    tools:ignore="MissingConstraints" />
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/ic_arrow_details"/>
+
+            </LinearLayout>
+
+            <com.google.android.material.internal.BaselineLayout
+                android:layout_width="320dp"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <LinearLayout
+                android:id="@+id/cupons"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="15dp"
+                android:paddingLeft="30dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_cupons" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="28dp"
                     android:text="Cupons"
                     android:textColor="@color/dark"
-                    android:textSize="20dp"
-                    app:layout_constraintLeft_toRightOf="@+id/icon_cupons" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <com.google.android.material.internal.BaselineLayout
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#C2C2C2"
-                app:layout_constraintBottom_toBottomOf="@+id/session_cupons"
-                tools:ignore="MissingConstraints"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="420dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/session_sair"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:padding="30dp"
-                tools:ignore="MissingConstraints">
+                    android:textSize="18sp" />
 
                 <ImageView
-                    android:id="@+id/icon_sair"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_sair"
-                    tools:ignore="MissingConstraints" />
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/ic_arrow_details"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="28dp"
-                    android:text="Sair"
-                    android:textColor="@color/dark"
-                    android:textSize="20dp"
-                    app:layout_constraintLeft_toRightOf="@+id/icon_sair"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
 
             <com.google.android.material.internal.BaselineLayout
+                android:layout_width="320dp"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <LinearLayout
+                android:id="@+id/pagamento"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#C2C2C2"
-                app:layout_constraintBottom_toBottomOf="@+id/session_sair"
-                tools:ignore="MissingConstraints"/>
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="15dp"
+                android:paddingLeft="30dp">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_cartao" />
 
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:text="Pagamento"
+                    android:textColor="@color/dark"
+                    android:textSize="18sp" />
 
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/ic_arrow_details"/>
 
+            </LinearLayout>
+
+            <com.google.android.material.internal.BaselineLayout
+                android:layout_width="320dp"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <LinearLayout
+                android:id="@+id/sair"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="15dp"
+                android:paddingLeft="30dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_sair" />
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:text="Sair da Conta"
+                    android:textColor="@color/dark"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/ic_arrow_details"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </FrameLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

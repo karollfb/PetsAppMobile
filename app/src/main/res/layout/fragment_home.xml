@@ -183,7 +183,7 @@
                         android:layout_height="wrap_content"
                         android:text="Filtro"
                         android:textColor="@color/textDetails"
-                        android:layout_marginLeft="130dp"
+                        android:layout_marginLeft="90dp"
                         android:textSize="16sp"
                         android:paddingLeft="-10dp"
                         android:textAllCaps="false"/>
@@ -191,6 +191,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/servicos_empresas"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_marginLeft="30dp"
@@ -252,14 +253,14 @@
                             <ImageView
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
-                                android:src="@drawable/ic_localition"
-                                android:layout_marginLeft="40dp"/>
+                                android:src="@drawable/ic_localition_distance"
+                                android:layout_marginLeft="15dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="10dp"
-                                android:text="2.7km"
+                                android:text="2km"
                                 android:textSize="16sp"/>
 
                         </LinearLayout>

@@ -11,19 +11,19 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //hiding title bar of this activity
+        //ocultando a barra de título desta atividade
         window.requestFeature(Window.FEATURE_NO_TITLE)
-        //making this activity full screen
+        //mostrando em tela cheia
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_splash)
 
-        //4second splash time
+        //tempo da splash sera de 4 segundos
         Handler().postDelayed({
-            //start main activity
-            startActivity(Intent(this@SplashActivity, MainActivity::class.java))
-            //finish this activity
+            //iniciar main activity
+            startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+            //terminar a atividade apos atingir os 4 segundos
             finish()
-        },4000)
+        },1000)
 
     }
 }
