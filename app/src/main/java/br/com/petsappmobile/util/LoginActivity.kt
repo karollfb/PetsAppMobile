@@ -24,19 +24,21 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         //instancia da classe httoHelper
         val httpHelper = HttpHelper()
 
+        println("Karol")
+
         doAsync {
             //os campos necessarios que serão preenchidos para a autenticação
             val usuario = httpHelper.login(editTextEmail.text.toString(), editTextSenha.text.toString())
 
             //se retornar um usuário a autenticação está ok
             uiThread {
-                if (usuario.email.isNotEmpty()){
+                println(" >>>>>>>>>>>>>>>> "+usuario)
+                if (usuario.user.email.isNotEmpty()){
                     abrirMainActivity()
                 } else {
                     toast("E-mail ou senha incorretos! Tente novamente.")
                 }
             }
-
         }
     }
 

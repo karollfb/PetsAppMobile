@@ -1,45 +1,55 @@
 package br.com.petsappmobile.http
 
+import br.com.petsappmobile.model.RespostaLogin
 import br.com.petsappmobile.model.Usuario
 import com.google.gson.Gson
+import okhttp3.MediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import okhttp3.RequestBody
 
 class HttpHelper {
 
-    fun login(email: String, senha: String) : Usuario{
+    fun login(email: String, password: String) : RespostaLogin{
 
         //criando url do endpoint no servidor
-        val URL = "http://127.0.0.1:8000/api/v1/login"
+        val URL = "http://192.168.1.106:8000/api/v1/login"
 
         //criando um cliente http
         val client = OkHttpClient()
 
-        //construindo a requisição http para o servidor
-        val request = Request
-            .Builder()
-            .url(URL)
-            .get()
-            .build()
+        val gson = Gson()
 
-        //criando a resposta do servidor
+        val usuarioRequest = Usuario()
+        usuarioRequest.email = email
+        usuarioRequest.password = password
+
+        val requestBody = gson.toJson(usuarioRequest)
+        println(">>>>>>>>>>>>>>>>$$$$$$$$$$$" + requestBody)
+
+        //construindo a requisição http para o servidor
+        val headerHttp = MediaType.parse("application/json; charset=utf-8")
+        val body = RequestBody.create(headerHttp, requestBody)
+
+        val request = Request.Builder().url(URL).post(body).build()
         val response = client.newCall(request).execute()
 
         //extraindo o json do body da resposta
-        val responseBody = response.body()
+        val responseBody = response.body()?.string()
 
-        var usuario = Usuario()
+
+        var respostaLogin = RespostaLogin()
 
         //criando um objeto usuario
-        if (responseBody!!.contentLength().toInt() != 0){
-            //transformando o corpo da requisição em string
-            var json = responseBody.string()
-            var gson = Gson()
 
-            //transformando em uma classe do kotlin
-            usuario= gson.fromJson(json, Usuario::class.java)
-        }
+        //transformando o corpo da requisição em string
 
-        return usuario
+//        var gson = Gson()
+
+        //transformando em uma classe do kotlin
+        respostaLogin = gson.fromJson(responseBody, RespostaLogin::class.java)
+
+        println(responseBody)
+        return respostaLogin
     }
 }
