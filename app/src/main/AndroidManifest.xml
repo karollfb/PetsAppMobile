@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.petsappmobile">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -19,9 +20,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
+        </activity> <!-- <activity android:name=".LoginActivity"></activity> -->
+        <activity android:name=".WelcomeActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".CadastroActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

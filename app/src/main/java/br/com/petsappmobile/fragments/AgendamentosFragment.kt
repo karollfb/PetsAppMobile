@@ -1,4 +1,4 @@
-package br.com.petsappmobile
+package br.com.petsappmobile.fragments
 
 
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.ViewPager
+import br.com.petsappmobile.MyPagerAdapter
+import br.com.petsappmobile.R
 import com.google.android.material.tabs.TabLayout
 
 /**

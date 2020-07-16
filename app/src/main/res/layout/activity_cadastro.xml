@@ -44,17 +44,63 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="290dp"
+            android:layout_marginTop="220dp"
             tools:ignore="MissingConstraints">
 
             <EditText
-                android:id="@+id/email_cadastro"
+                android:id="@+id/editTextNomeCadastro"
                 android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:background="@drawable/button_login"
+                android:drawableLeft="@drawable/ic_user_cadastro"
+                android:drawablePadding="15dp"
+                android:hint="Nome"
+                android:inputType="text"
+                android:paddingLeft="15dp">
+
+            </EditText>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="280dp"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/editTextCelularCadastro"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:background="@drawable/button_login"
+                android:drawableLeft="@drawable/ic_telefone"
+                android:drawablePadding="15dp"
+                android:hint="Celular"
+                android:inputType="text"
+                android:paddingLeft="15dp">
+
+            </EditText>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="340dp"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/editTextEmailCadastro"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:hint="Email"
-                android:padding="20dp"
+                android:paddingLeft="15dp"
                 android:drawablePadding="15dp"
                 android:inputType="textEmailAddress"
                 android:drawableLeft="@drawable/ic_email"
@@ -67,17 +113,17 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="360dp"
+            android:layout_marginTop="400dp"
             tools:ignore="MissingConstraints">
 
             <EditText
-                android:id="@+id/senha_cadastro"
+                android:id="@+id/editTextSenhaCadastro"
                 android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:hint="Senha"
-                android:padding="18dp"
+                android:paddingLeft="15dp"
                 android:drawablePadding="15dp"
                 android:inputType="textPassword"
                 android:drawableLeft="@drawable/ic_password"
@@ -90,17 +136,17 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="430dp"
+            android:layout_marginTop="460dp"
             tools:ignore="MissingConstraints">
 
             <EditText
-                android:id="@+id/senha_confirmar_cadastro"
+                android:id="@+id/editTextConfirmarSenhaCadastro"
                 android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:hint="Confirmar Senha"
-                android:padding="18dp"
+                android:paddingLeft="15dp"
                 android:drawablePadding="15dp"
                 android:inputType="textPassword"
                 android:drawableLeft="@drawable/ic_password"
@@ -113,9 +159,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="510dp">
+            android:layout_marginTop="540dp">
 
             <Button
+                android:id="@+id/buttonCadastro"
                 android:layout_width="280dp"
                 android:layout_height="50dp"
                 android:text="Cadastrar"
@@ -137,7 +184,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="580dp">
+            android:layout_marginTop="600dp">
 
             <TextView
                 android:layout_width="wrap_content"

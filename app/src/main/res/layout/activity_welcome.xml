@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".WelcomeActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bem vindo(a) ao PETSAPP!"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="80dp"/>
+
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="350dp"
+        android:src="@drawable/logo_petsapp"
+        android:layout_marginTop="-40dp"
+        android:layout_gravity="center_horizontal"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="-20dp">
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Do melhor para o melhor amigo do homem"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Como deseja continuar?"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:text="Fazer Login"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:background="@drawable/button_logar"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        style="?android:attr/borderlessButtonStyle"/>
+
+    <Button
+        android:id="@+id/button_cadastro"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:text="Cadastrar-se"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:background="@drawable/button_cadastrar"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        style="?android:attr/borderlessButtonStyle"/>
+
+</LinearLayout>

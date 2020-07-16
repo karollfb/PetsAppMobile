@@ -3,6 +3,8 @@ package br.com.petsappmobile
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import br.com.petsappmobile.fragments.EmAndamentoFragment
+import br.com.petsappmobile.fragments.RealizadosFragment
 
 class MyPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 

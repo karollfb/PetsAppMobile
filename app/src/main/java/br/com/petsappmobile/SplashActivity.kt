@@ -20,10 +20,10 @@ class SplashActivity : AppCompatActivity() {
         //tempo da splash sera de 4 segundos
         Handler().postDelayed({
             //iniciar main activity
-            startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+            startActivity(Intent(this@SplashActivity, WelcomeActivity::class.java))
             //terminar a atividade apos atingir os 4 segundos
             finish()
-        },1000)
+        },2000)
 
     }
 }

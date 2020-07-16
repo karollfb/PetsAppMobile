@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
+import br.com.petsappmobile.fragments.AgendamentosFragment
+import br.com.petsappmobile.fragments.FavoritosFragment
+import br.com.petsappmobile.fragments.HomeFragment
+import br.com.petsappmobile.fragments.PerfilFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -39,7 +43,6 @@ class MainActivity : AppCompatActivity() {
     private fun addFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
-            .setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)
             .replace(R.id.content, fragment, fragment.javaClass.getSimpleName())
             .commit()
     }
@@ -51,4 +54,7 @@ class MainActivity : AppCompatActivity() {
         val fragment = HomeFragment()
         addFragment(fragment)
     }
+
+
+
 }
