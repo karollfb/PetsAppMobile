@@ -1,6 +1,6 @@
 package br.com.petsappmobile.model
 
-class Empresa(Int: Int, string: String) {
+class Empresa() {
 
     var id: Int = 0
     var nome_fantasia: String = ""

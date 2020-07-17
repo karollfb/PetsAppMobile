@@ -26,33 +26,33 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
 
     ): View? {
-
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val inflated = inflater.inflate(R.layout.fragment_home, container, false)
 
-//        val rootView = inflater.inflate(R.layout.fragment_home, container, false)
-//        val rvEmpresas = rootView.findViewById(R.id.rvEmpresas) as RecyclerView
-//        rvEmpresas.layoutManager = LinearLayoutManager(activity)
-//        rvEmpresas.adapter = EmpresaRecyclerAdapter()
-//        return rootView
+        showRecyclerView()
 
-      showRecyclerView()
+        return inflated
+    }
 
-}
-
-
-    private fun showRecyclerView(){
+    private fun showRecyclerView() {
 
         doAsync {
-            var http = HttpHelper()
-            var lista = http.getEmpresas()
+            val http = HttpHelper()
 
-            uiThread {
-                rvEmpresas.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-                empresaRecyclerAdapter = EmpresaRecyclerAdapter(lista)
-                rvEmpresas.adapter = empresaRecyclerAdapter
+            try {
+                val lista = http.getEmpresas()
+
+                uiThread {
+                    rvEmpresas.layoutManager =
+                        LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+                    empresaRecyclerAdapter = EmpresaRecyclerAdapter(lista)
+                    rvEmpresas.adapter = empresaRecyclerAdapter
+                }
+            } catch(e: Exception) {
+                uiThread {
+                    println(">>>>>>>>>>>>>>>>>>>>>>> Network Exception: $e")
+                }
             }
         }
     }
-
 }

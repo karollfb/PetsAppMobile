@@ -1,6 +1,7 @@
 package br.com.petsappmobile.http
 
 import br.com.petsappmobile.model.Empresa
+import br.com.petsappmobile.model.RespostaEmpresasCadastradas
 import br.com.petsappmobile.model.RespostaLogin
 import br.com.petsappmobile.model.Usuario
 import com.google.gson.Gson
@@ -12,6 +13,8 @@ import org.json.JSONArray
 
 class HttpHelper {
 
+    private val gson = Gson()
+
     fun login(email: String, password: String) : RespostaLogin{
 
         //criando url do endpoint no servidor
@@ -19,9 +22,6 @@ class HttpHelper {
 
         //criando um cliente http
         val client = OkHttpClient()
-
-        val gson = Gson()
-
         val usuarioRequest = Usuario()
         usuarioRequest.email = email
         usuarioRequest.password = password
@@ -69,13 +69,12 @@ class HttpHelper {
         val response = client.newCall(request).execute()
 
         return response.body().toString()
-
     }
 
-    fun getEmpresas(): ArrayList<Empresa>{
+    fun getEmpresas(): List<Empresa>{
 
         // determinando a URL do endpoint no servidor
-        val URL = "http://192.168.1.104:8000/api/v1/empresas"
+        val URL = "http://192.168.1.104:8000/api/v1/empresas-cadastradas"
 
         // criando um cliente Http
         val client = OkHttpClient()
@@ -87,27 +86,12 @@ class HttpHelper {
         val response = client.newCall(request).execute()
 
         // extraindo o json do body da resposta
-        val responseBody = response.body()
+        val responseBody = response.body()?.string()
 
-        //criando uma lista de empresas
-        var listaEmpresa = ArrayList<Empresa>()
+        //criando uma lista de empresa
+        val listaEmpresa = gson.fromJson(responseBody, RespostaEmpresasCadastradas::class.java)
 
-        if (responseBody != null){
-            var empresasJson = responseBody.string()
-            var empresasArray = JSONArray(empresasJson)
-
-            for (i in 0 until empresasArray.length()){
-                val empresaJson = empresasArray.getJSONObject(i)
-
-                val empresa = Empresa(
-                    empresaJson.getInt("id"),
-                    empresaJson.getString("")
-                )
-
-                listaEmpresa.add(empresa)
-            }
-        }
-        return listaEmpresa
+        return listaEmpresa.data
     }
 
 }
