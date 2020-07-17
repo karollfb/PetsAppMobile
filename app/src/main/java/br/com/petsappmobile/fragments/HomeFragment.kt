@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
                 }
             } catch(e: Exception) {
                 uiThread {
-                    println(">>>>>>>>>>>>>>>>>>>>>>> Network Exception: $e")
+                    println(">>>>>>>>>>>>>>>>>>>> Network Exception: $e")
                 }
             }
         }
