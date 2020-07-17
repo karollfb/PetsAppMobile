@@ -74,22 +74,22 @@ class HttpHelper {
 
     fun getEmpresas(): ArrayList<Empresa>{
 
-        // determinar a URL do endpoint no servidor
+        // determinando a URL do endpoint no servidor
         val URL = "http://192.168.1.104:8000/api/v1/empresas"
 
-        // Criar um cliente Http
+        // criando um cliente Http
         val client = OkHttpClient()
 
-        // Construir a requisição http para o servidor
+        // construindo a requisição http para o servidor
         val request = Request.Builder().url(URL).get().build()
 
-        // Criar a resposta do servidor
+        // criando a resposta do servidor
         val response = client.newCall(request).execute()
 
-        // Extrair o json do body da resposta
+        // extraindo o json do body da resposta
         val responseBody = response.body()
 
-        // Criar uma coleção de dentistas
+        //criando uma lista de empresas
         var listaEmpresa = ArrayList<Empresa>()
 
         if (responseBody != null){

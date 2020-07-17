@@ -17,9 +17,6 @@ class EmpresaRecyclerAdapter (var lista: List<Empresa>) : RecyclerView.Adapter<R
             .from(parent.context)
             .inflate(R.layout.layout_lista_empresas, parent, false)
 
-
-        println(">>>>>>>>>>>>>" + lista)
-
         return EmpresaViewHolder(itemView)
     }
 
